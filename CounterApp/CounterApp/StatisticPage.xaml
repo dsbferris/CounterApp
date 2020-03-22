@@ -6,9 +6,5 @@
              xmlns:charts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              mc:Ignorable="d"
              x:Class="CounterApp.StatisticPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <charts:ChartView x:Name="chartview"/>
-        </StackLayout>
-    </ContentPage.Content>
+    <charts:ChartView x:Name="chartView" />
 </ContentPage>
