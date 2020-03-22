@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:CounterApp.ViewModels"
+             x:Class="CounterApp.SettingsPage"
+             Title="Settings">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:SettingsViewModel x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <StackLayout Padding="20">
+
+            <StackLayout Orientation="Horizontal">
+                <CheckBox IsChecked="{Binding KeepDisplayOn, Mode=TwoWay}"/>
+                <Label Text="Keep Display on" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox IsChecked="{Binding PlaySound, Mode=TwoWay}"/>
+                <Label Text="Play Sound on Click" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox IsChecked="{Binding EnableStatistics, Mode=TwoWay}"/>
+                <Label Text="Enable Statistics" VerticalOptions="Center"/>
+            </StackLayout>
+            
+            <Label Text="Select Vibration Strenght" HorizontalOptions="Center"/>
+            <Picker ItemsSource="{Binding StrenghtEnums}" SelectedItem="{Binding Strenght}" SelectedIndexChanged="Picker_SelectedIndexChanged"
+                        HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+ 

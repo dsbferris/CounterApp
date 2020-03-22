@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:CounterApp.ViewModels"
+             mc:Ignorable="d"
+             Title="Counter"
+             x:Class="CounterApp.CounterPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:CounterViewModel x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Edit" x:Name="Edit" Clicked="Edit_Clicked" Grid.Column="0" />
+                <Button Text="Reset" x:Name="Reset" Clicked="Reset_Clicked" Grid.Column="1" />
+                <Button Text="Settings" x:Name="Settings" Clicked="Settings_Clicked" Grid.Column="2" />
+            </Grid>
+            <Grid HorizontalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <Label Text="IN" FontSize="Large" TextColor="Green" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" />
+                <Label Text="MAX" FontSize="Large" Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Center" />
+                <Label Text="OUT" FontSize="Large" TextColor="Red" Grid.Column="2" Grid.Row="0" HorizontalTextAlignment="Center" />
+                
+                <Label Text="{Binding Plus}" FontSize="Large" TextColor="Green" Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding Max}" FontSize="Large" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding Minus}" FontSize="Large" TextColor="Red" Grid.Column="2" Grid.Row="1" HorizontalTextAlignment="Center" />
+            </Grid>
+
+            <Label Text="{Binding Current}" x:Name="Number" TextColor="Black" FontSize="Header" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <Button Text="+" Clicked="Button_Clicked" FontSize="Header" TextColor="Green"/>
+            <Button Text="-" Clicked="Button_Clicked" FontSize="Header" TextColor="Red" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
