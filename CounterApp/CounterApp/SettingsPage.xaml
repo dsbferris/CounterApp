@@ -33,6 +33,7 @@
             <Picker ItemsSource="{Binding StrenghtEnums}" SelectedItem="{Binding Strenght}" SelectedIndexChanged="Picker_SelectedIndexChanged"
                         HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
 
+            <Button Text="View Charts" Clicked="Button_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

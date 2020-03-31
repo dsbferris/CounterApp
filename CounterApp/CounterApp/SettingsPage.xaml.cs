@@ -22,5 +22,11 @@ namespace CounterApp
 			svm.Strenght = (SettingsViewModel.VibrationStrenghtEnum) (sender as Picker).SelectedItem;
 			Vibration.Vibrate((int)svm.Strenght);
 		}
+
+		private async void Button_Clicked(object sender, System.EventArgs e)
+		{
+			StatisticPage statisticPage = new StatisticPage();
+			await Navigation.PushAsync(statisticPage);
+		}
 	}
 }

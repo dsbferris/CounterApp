@@ -8305,7 +8305,7 @@ namespace CounterApp.Droid
 			public const int design_snackbar_background = 2131165283;
 			
 			// aapt resource value: 0x7F070067
-			public const int icon = 2131165287;
+			public const int iconcount = 2131165287;
 			
 			// aapt resource value: 0x7F070064
 			public const int ic_mtrl_chip_checked_black = 2131165284;
@@ -9333,13 +9333,7 @@ namespace CounterApp.Droid
 		{
 			
 			// aapt resource value: 0x7F0C0000
-			public const int icon = 2131492864;
-			
-			// aapt resource value: 0x7F0C0001
-			public const int icon_round = 2131492865;
-			
-			// aapt resource value: 0x7F0C0002
-			public const int launcher_foreground = 2131492866;
+			public const int iconcount = 2131492864;
 			
 			static Mipmap()
 			{
