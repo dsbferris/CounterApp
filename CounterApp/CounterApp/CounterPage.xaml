@@ -3,16 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:viewmodel="clr-namespace:CounterApp.ViewModels"
-             xmlns:model="clr-namespace:CounterApp.Models"
              mc:Ignorable="d"
              Title="Counter"
              x:Class="CounterApp.CounterPage">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <viewmodel:CounterViewModel x:Key="vm"/>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Padding="20">
             <Grid>
@@ -30,19 +23,22 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                
-                <Label Text="IN" FontSize="Large" TextColor="Green" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" />
-                <Label Text="MAX" FontSize="Large" Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Center" />
-                <Label Text="OUT" FontSize="Large" TextColor="Red" Grid.Column="2" Grid.Row="0" HorizontalTextAlignment="Center" />
-                
-                <Label Text="{Binding Counter.Plus}" FontSize="Large" TextColor="Green" Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center" />
-                <Label Text="{Binding Counter.Max}" FontSize="Large" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center" />
-                <Label Text="{Binding Counter.Minus}" FontSize="Large" TextColor="Red" Grid.Column="2" Grid.Row="1" HorizontalTextAlignment="Center" />
+
+                <Label Text="IN"    FontSize="Large" Grid.Column="0" Grid.Row="0" TextColor="Green"  HorizontalTextAlignment="Center" />
+                <Label Text="MAX"   FontSize="Large" Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Center" />
+                <Label Text="MIN"   FontSize="Large" Grid.Column="2" Grid.Row="0" HorizontalTextAlignment="Center"/>
+                <Label Text="OUT"   FontSize="Large" Grid.Column="3" Grid.Row="0" TextColor="Red" HorizontalTextAlignment="Center" />
+
+                <Label Text="{Binding Counter.Plus}"    FontSize="Large" Grid.Column="0" Grid.Row="1" TextColor="Green" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding Counter.Max}"     FontSize="Large" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding Counter.Min}"     FontSize="Large" Grid.Column="2" Grid.Row="1" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding Counter.Minus}"   FontSize="Large" Grid.Column="3" Grid.Row="1" TextColor="Red" HorizontalTextAlignment="Center" />
             </Grid>
 
             <Label Text="{Binding Counter.Current}" x:Name="Number" TextColor="Black" FontSize="Header" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />

@@ -4,16 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             xmlns:local="clr-namespace:CounterApp.Models"
              x:Class="CounterApp.SettingsPage"
              Title="Settings">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <local:Settings x:Key="vm"/>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <ContentPage.Content>
-
         <StackLayout Padding="20">
 
             <StackLayout Orientation="Horizontal">
@@ -26,15 +19,15 @@
             </StackLayout>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Label Text="Vibration Strenght: " VerticalOptions="Center" Grid.Column="0"/>
-                <Picker Grid.Column="1" VerticalOptions="Center" ItemsSource="{Binding StrenghtEnums}" SelectedItem="{Binding Strenght}" SelectedIndexChanged="Picker_SelectedIndexChanged" />
+                <Picker Grid.Column="1" VerticalOptions="CenterAndExpand" ItemsSource="{Binding StrenghtEnums}" SelectedItem="{Binding Strenght}" SelectedIndexChanged="Picker_SelectedIndexChanged" />
             </Grid>
 
 
-            <Button Text="View Charts" Clicked="Button_Clicked" />
+            <Button Text="View Charts" Clicked="Button_Clicked" Padding="20" Margin="20" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
