@@ -1,4 +1,5 @@
 ﻿using Android.Views;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace CounterApp
@@ -8,6 +9,8 @@ namespace CounterApp
 		public App()
 		{
 			InitializeComponent();
+
+			DeviceDisplay.KeepScreenOn = Preferences.Get("KeepDisplayOn", true);
 			MainPage = new NavigationPage(new CounterPage());
 		}
 

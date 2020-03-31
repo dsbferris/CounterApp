@@ -1,63 +1,46 @@
-﻿using System;
+﻿using CounterApp.Models;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace CounterApp.ViewModels
 {
-	public class CounterViewModel : INotifyPropertyChanged
+	public class CounterViewModel
 	{
-		private int _max;
-		public string Max { get { return _max.ToString(); } set { _max = Convert.ToInt32(value); OnPropertyChanged("Max"); } }
+		public Counter Counter { get; set; }
 
-		private int _plus;
-		public string Plus { get { return _plus.ToString(); } set { _plus = Convert.ToInt32(value); OnPropertyChanged("Plus"); } }
-
-		private int _minus;
-		public string Minus { get { return _minus.ToString(); } set { _minus = Convert.ToInt32(value); OnPropertyChanged("Minus"); } }
-
-		private int _current;
-		public string Current { get { return _current.ToString(); } set { _current = Convert.ToInt32(value); OnPropertyChanged("Current"); } }
-
-
-		public void Increment()
+		public CounterViewModel()
 		{
-			_current++;
-			_plus++;
-			OnPropertyChanged("Current");
-			OnPropertyChanged("Plus");
-			if (_current > _max)
-				Max = Current;
+			Counter = new Counter();
 		}
 
-		public void Decrement()
+		public void Increment(int n = 1)
 		{
-			_current--;
-			_minus++;
-			OnPropertyChanged("Current");
-			OnPropertyChanged("Minus");
+			Counter.Plus += n;
+			if (Counter.Current > Counter.Max) Counter.Max = Counter.Current;
+		}
+
+		public void Decrement(int n = 1)
+		{
+			Counter.Minus += n;
+			if (Counter.Current < Counter.Min) Counter.Min = Counter.Current;
 		}
 
 		public void Edit(string s)
 		{
-			Current = s;
-			if (_current > _max)
-				Max = Current;
+			int target = Convert.ToInt32(s);
+			if (target > Counter.Current) Increment(target - Counter.Current);
+			if (target < Counter.Current) Decrement(target - Counter.Current);
 		}
 
 		public void Reset()
 		{
-			Max = "0";
-			Plus = "0";
-			Minus = "0";
-			Current = "0";
+			Counter.Max = 0;
+			Counter.Min = 0;
+			Counter.Plus = 0;
+			Counter.Minus = 0;
 		}
 
-
-		public event PropertyChangedEventHandler PropertyChanged;
-		protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-		{
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-		}
 
 	}
 }

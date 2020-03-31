@@ -19,7 +19,6 @@ namespace CounterApp
 			BindingContext = cvm;
 
 			settings = new SettingsViewModel();
-			DeviceDisplay.KeepScreenOn = settings.KeepDisplayOn;
 			if (settings.EnableStatistics)
 			{
 
@@ -81,7 +80,7 @@ namespace CounterApp
 
 		private async void Edit_Clicked(object sender, EventArgs e)
 		{
-			var s = await DisplayPromptAsync("Custom", "Enter custom number", placeholder: cvm.Current, keyboard: Keyboard.Numeric);
+			var s = await DisplayPromptAsync("Custom", "Enter custom number", placeholder: cvm.Counter.Current.ToString(), keyboard: Keyboard.Numeric);
 			if (!String.IsNullOrEmpty(s))
 			{
 				cvm.Edit(s);
