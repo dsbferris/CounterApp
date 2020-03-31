@@ -4,12 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             xmlns:local="clr-namespace:CounterApp.ViewModels"
+             xmlns:local="clr-namespace:CounterApp.Models"
              x:Class="CounterApp.SettingsPage"
              Title="Settings">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:SettingsViewModel x:Key="vm"/>
+            <local:Settings x:Key="vm"/>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -24,10 +24,15 @@
                 <CheckBox IsChecked="{Binding PlaySound, Mode=TwoWay}"/>
                 <Label Text="Play Sound on Click" VerticalOptions="Center"/>
             </StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Vibration Strenght: " VerticalOptions="Center" Grid.Column="0"/>
+                <Picker Grid.Column="1" VerticalOptions="Center" ItemsSource="{Binding StrenghtEnums}" SelectedItem="{Binding Strenght}" SelectedIndexChanged="Picker_SelectedIndexChanged" />
+            </Grid>
 
-            <Label Text="Select Vibration Strenght" HorizontalOptions="Center"/>
-            <Picker ItemsSource="{Binding StrenghtEnums}" SelectedItem="{Binding Strenght}" SelectedIndexChanged="Picker_SelectedIndexChanged"
-                        HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
 
             <Button Text="View Charts" Clicked="Button_Clicked" />
         </StackLayout>

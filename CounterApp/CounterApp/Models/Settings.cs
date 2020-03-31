@@ -3,9 +3,9 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Essentials;
 
-namespace CounterApp.ViewModels
+namespace CounterApp.Models
 {
-	public class SettingsViewModel : INotifyPropertyChanged
+	public class Settings : INotifyPropertyChanged
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
 		protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -19,6 +19,7 @@ namespace CounterApp.ViewModels
 			get { return Preferences.Get("KeepDisplayOn", true); }
 			set
 			{
+				DeviceDisplay.KeepScreenOn = value;
 				Preferences.Set("KeepDisplayOn", value);
 				OnPropertyChanged("KeepDisplayOn");
 			}
@@ -34,7 +35,8 @@ namespace CounterApp.ViewModels
 			}
 		}
 
-		public VibrationStrenghtEnum Strenght {
+		public VibrationStrenghtEnum Strenght
+		{
 			get { return (VibrationStrenghtEnum)Preferences.Get("Strenght", (int)VibrationStrenghtEnum.Medium); }
 			set
 			{
@@ -43,7 +45,14 @@ namespace CounterApp.ViewModels
 			}
 		}
 
-		public List<VibrationStrenghtEnum> StrenghtEnums { get { return new List<VibrationStrenghtEnum>() { VibrationStrenghtEnum.Off, VibrationStrenghtEnum.Minimal, VibrationStrenghtEnum.Weak, VibrationStrenghtEnum.Medium, VibrationStrenghtEnum.Strong, VibrationStrenghtEnum.Overkill }; } }
+		public List<VibrationStrenghtEnum> StrenghtEnums { get { 
+				return new List<VibrationStrenghtEnum>() {
+				VibrationStrenghtEnum.Off, 
+				VibrationStrenghtEnum.Minimal, 
+				VibrationStrenghtEnum.Weak, 
+				VibrationStrenghtEnum.Medium, 
+				VibrationStrenghtEnum.Strong, 
+				VibrationStrenghtEnum.Overkill }; } }
 
 		public enum VibrationStrenghtEnum : int
 		{
@@ -54,6 +63,5 @@ namespace CounterApp.ViewModels
 			Strong = 100,
 			Overkill = 300
 		}
-
 	}
 }

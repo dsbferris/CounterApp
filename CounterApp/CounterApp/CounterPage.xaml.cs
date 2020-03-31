@@ -1,4 +1,5 @@
 ﻿using CounterApp.ViewModels;
+using CounterApp.Models;
 using System;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -10,13 +11,14 @@ namespace CounterApp
 	public partial class CounterPage : ContentPage
 	{
 		private readonly CounterViewModel cvm;
-		private readonly SettingsViewModel settings;
+		private readonly Settings settings;
 
 		public CounterPage()
 		{
 			InitializeComponent();
 			cvm = new CounterViewModel();
 			BindingContext = cvm;
+			settings = new Settings();
 		}
 
 		private void Plus()
