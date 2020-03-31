@@ -17,12 +17,6 @@ namespace CounterApp
 			InitializeComponent();
 			cvm = new CounterViewModel();
 			BindingContext = cvm;
-
-			settings = new SettingsViewModel();
-			if (settings.EnableStatistics)
-			{
-
-			}
 		}
 
 		private void Plus()
@@ -80,7 +74,7 @@ namespace CounterApp
 
 		private async void Edit_Clicked(object sender, EventArgs e)
 		{
-			var s = await DisplayPromptAsync("Custom", "Enter custom number", placeholder: cvm.Counter.Current.ToString(), keyboard: Keyboard.Numeric);
+			var s = await DisplayPromptAsync("Custom number", "Enter custom number", placeholder: cvm.Counter.Current.ToString(), keyboard: Keyboard.Numeric);
 			if (!String.IsNullOrEmpty(s))
 			{
 				cvm.Edit(s);

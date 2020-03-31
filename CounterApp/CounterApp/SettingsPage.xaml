@@ -24,11 +24,7 @@
                 <CheckBox IsChecked="{Binding PlaySound, Mode=TwoWay}"/>
                 <Label Text="Play Sound on Click" VerticalOptions="Center"/>
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <CheckBox IsChecked="{Binding EnableStatistics, Mode=TwoWay}"/>
-                <Label Text="Enable Statistics" VerticalOptions="Center"/>
-            </StackLayout>
-            
+
             <Label Text="Select Vibration Strenght" HorizontalOptions="Center"/>
             <Picker ItemsSource="{Binding StrenghtEnums}" SelectedItem="{Binding Strenght}" SelectedIndexChanged="Picker_SelectedIndexChanged"
                         HorizontalOptions="FillAndExpand" VerticalOptions="Center" />

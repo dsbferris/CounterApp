@@ -34,16 +34,6 @@ namespace CounterApp.ViewModels
 			}
 		}
 
-		public bool EnableStatistics
-		{
-			get { return Preferences.Get("EnableStatistics", false); }
-			set
-			{
-				Preferences.Set("EnableStatistics", value);
-				OnPropertyChanged("EnableStatistics");
-			}
-		}
-
 		public VibrationStrenghtEnum Strenght {
 			get { return (VibrationStrenghtEnum)Preferences.Get("Strenght", (int)VibrationStrenghtEnum.Medium); }
 			set
