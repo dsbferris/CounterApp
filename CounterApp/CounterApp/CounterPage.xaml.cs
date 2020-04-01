@@ -10,15 +10,23 @@ namespace CounterApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CounterPage : ContentPage
 	{
-		private readonly CounterViewModel cvm;
-		private readonly Settings settings;
+		private CounterViewModel cvm;
+		private Settings settings;
 
 		public CounterPage()
 		{
 			InitializeComponent();
-			cvm = new CounterViewModel();
-			BindingContext = cvm;
-			settings = new Settings();
+		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			if (!DesignMode.IsDesignModeEnabled)
+			{
+				cvm = new CounterViewModel();
+				BindingContext = cvm;
+				settings = new Settings();
+			}
 		}
 
 		private void Plus()

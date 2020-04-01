@@ -12,8 +12,11 @@ namespace CounterApp
 
 		public SettingsPage(Settings set)
 		{
-			this.settings = set;
-			BindingContext = settings;
+			if (!DesignMode.IsDesignModeEnabled)
+			{
+				this.settings = set;
+				BindingContext = settings;
+			}
 			InitializeComponent();
 		}
 

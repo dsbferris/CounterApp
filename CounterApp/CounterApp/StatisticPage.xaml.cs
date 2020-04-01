@@ -18,9 +18,13 @@ namespace CounterApp
 		public StatisticPage()
 		{
 			InitializeComponent();
+		}
 
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
 			var entries = new[]
-			{
+				{
 				new Entry(0)
 				{
 					Label = "14:00",

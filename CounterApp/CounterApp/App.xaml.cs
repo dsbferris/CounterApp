@@ -9,8 +9,7 @@ namespace CounterApp
 		public App()
 		{
 			InitializeComponent();
-
-			DeviceDisplay.KeepScreenOn = Preferences.Get("KeepDisplayOn", true);
+			if(!DesignMode.IsDesignModeEnabled)	DeviceDisplay.KeepScreenOn = Preferences.Get("KeepDisplayOn", true);
 			MainPage = new NavigationPage(new CounterPage());
 		}
 
