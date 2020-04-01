@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CounterApp.Android", "CounterApp\CounterApp.Android\CounterApp.Android.csproj", "{CE0F0116-5239-4665-9E3D-71619EC2BD5B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountMaster.Android", "CounterApp\CounterApp.Android\CountMaster.Android.csproj", "{CE0F0116-5239-4665-9E3D-71619EC2BD5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CounterApp", "CounterApp\CounterApp\CounterApp.csproj", "{A2C6392D-7676-4F08-B639-99D9A83578BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CountMaster", "CounterApp\CounterApp\CountMaster.csproj", "{A2C6392D-7676-4F08-B639-99D9A83578BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

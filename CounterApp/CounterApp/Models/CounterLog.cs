@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CounterApp.Models
+namespace CountMaster.Models
 {
 	class CounterLog
 	{

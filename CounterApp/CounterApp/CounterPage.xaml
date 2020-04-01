@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              Title="Counter"
-             x:Class="CounterApp.CounterPage">
+             x:Class="CountMaster.CounterPage">
     <ContentPage.Content>
         <StackLayout Padding="20">
             <Grid>

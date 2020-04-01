@@ -9,7 +9,7 @@ using Android.OS;
 
 using Xamarin.Essentials;
 
-namespace CounterApp.Droid
+namespace CountMaster.Droid
 {
     [Activity(Label = "CounterApp", Icon = "@mipmap/iconcount", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity

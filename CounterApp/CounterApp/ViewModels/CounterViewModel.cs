@@ -1,9 +1,9 @@
-﻿using CounterApp.Models;
+﻿using CountMaster.Models;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace CounterApp.ViewModels
+namespace CountMaster.ViewModels
 {
 	public class CounterViewModel
 	{

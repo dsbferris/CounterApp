@@ -1,9 +1,9 @@
 ﻿using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using CounterApp.Models;
+using CountMaster.Models;
 
-namespace CounterApp
+namespace CountMaster
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SettingsPage : ContentPage

@@ -1,11 +1,11 @@
-﻿using CounterApp.ViewModels;
-using CounterApp.Models;
+﻿using CountMaster.ViewModels;
+using CountMaster.Models;
 using System;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CounterApp
+namespace CountMaster
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CounterPage : ContentPage

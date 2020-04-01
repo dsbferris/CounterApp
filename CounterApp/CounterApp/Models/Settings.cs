@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Essentials;
 
-namespace CounterApp.Models
+namespace CountMaster.Models
 {
 	public class Settings : INotifyPropertyChanged
 	{

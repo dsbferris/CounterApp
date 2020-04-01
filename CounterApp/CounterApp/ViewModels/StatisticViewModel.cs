@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CounterApp.ViewModels
+namespace CountMaster.ViewModels
 {
 	class StatisticViewModel
 	{

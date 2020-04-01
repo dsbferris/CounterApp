@@ -10,7 +10,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Entry = Microcharts.Entry;
 
-namespace CounterApp
+namespace CountMaster
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class StatisticPage : ContentPage

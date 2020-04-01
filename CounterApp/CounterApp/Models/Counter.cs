@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace CounterApp.Models
+namespace CountMaster.Models
 {
 	public class Counter : INotifyPropertyChanged
 	{
